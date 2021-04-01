@@ -2,6 +2,34 @@ const expandsMore = document.querySelectorAll('[expand-more]');
 const burgerMenu = document.querySelector('.burger-menu');
 const linesBugerMenu = document.querySelector('.lines-burger')
 const overlayMenu = document.querySelector('.overlay-menu');
+const menuLinks = document.querySelectorAll('.menu-links');
+const goTop = document.querySelector(".goTop");
+const scrollDown = document.querySelector(".scrolldown")
+const totalHeight = document.body.scrollHeight - window.innerHeight;
+
+window.addEventListener("scroll", ()=>{
+
+    let progressHeight = (window.pageYOffset / totalHeight) * 100;
+    if(progressHeight > 0) {
+        
+    }
+})
+
+goTop.addEventListener('click', ()=>{
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+// Partie gestion du menu "burger"
+menuLinks.forEach(links =>{
+    links.addEventListener('click', ()=>{
+        overlayMenu.classList.remove('open-overlay-menu')
+        burgerMenu.classList.remove('cross-burger-menu')
+    })
+})
+
 let menuOpen = false;
 burgerMenu.addEventListener('click',()=>{
     if(!menuOpen) {
@@ -16,6 +44,14 @@ burgerMenu.addEventListener('click',()=>{
     }
     
 })
+
+
+
+function newFunction() {
+    console.log("Scroll");
+}
+
+// Partie cads (voir plus/voir moins)
 
 function expand(){
     const showContent = document.getElementById(this.dataset.target);
@@ -34,3 +70,4 @@ function expand(){
 expandsMore.forEach(more => {
     more.addEventListener('click', expand)
 })
+
