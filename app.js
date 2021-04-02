@@ -10,9 +10,15 @@ const totalHeight = document.body.scrollHeight - window.innerHeight;
 window.addEventListener("scroll", ()=>{
 
     let progressHeight = (window.pageYOffset / totalHeight) * 100;
-    if(progressHeight > 0) {
-        
+    if(progressHeight > 0.5) {
+    burgerMenu.classList.add('burger-bg-active');
+    goTop.style.display="flex";
     }
+    else {
+        burgerMenu.classList.remove('burger-bg-active')
+        goTop.style.display="none";
+    }
+    
 })
 
 goTop.addEventListener('click', ()=>{
