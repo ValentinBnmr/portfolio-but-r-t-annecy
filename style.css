@@ -1,4 +1,8 @@
 
+/* Doc: - Le fichier css est ordonné selon l'ordre des éléments de la page.
+- les animations css sont à la l.640
+- Les média queries commenceà partir de la l.684*/
+
 :root
 {
 	--main-color: #05091a;
@@ -6,12 +10,11 @@
 	--main-font-color:#eaf2ff;
 	--second-font-color: #c8d3e6;
 	--main-family-font: 'Lexend', sans-serif;
-	--second-family-font: 'Noto Sans JP', sans-serif;
+	--second-family-font: 'Roboto', sans-serif;
 	--bg-color-even-section:#111a31;
 }
 
-/* #2434ca 5.61%  #5969FA 95.98% */
-/* General */
+/* Propriétés générale */
 *
 {
 	margin: 0;
@@ -57,7 +60,8 @@ section
 	color: var(--second-font-color);
 }
 
-.markt-title-section {
+.markt-title-section
+{
 	color: rgb(35, 50, 100);
 }
 
@@ -70,6 +74,7 @@ section
 	line-height: 24px;
 }
 
+/* Partie header : menu, container vidéo, container profil */
 header
 {
 	position: relative;
@@ -77,7 +82,6 @@ header
 	display: flex;
 	flex-direction: column;
 	clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-	
 }
 
 .overlay
@@ -91,47 +95,41 @@ header
 	z-index: 4;
 }
 
-.burger-menu {
-    position: fixed;
-    top: 48px;
-    left: 124px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* height: 80px; */
-    padding: 24px 16px;
+.burger-menu
+{
+	position: fixed;
+	top: 48px;
+	left: 124px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* height: 80px;
+	*/
+	padding: 24px 16px;
 	border-radius: 32px;
-    
-    z-index: 100;
-    cursor: pointer;
-    transition: 0.5s;
-  
-
-	
+	z-index: 100;
+	cursor: pointer;
+	transition: 0.5s;
 }
 
-.burger-bg-active {
+.burger-bg-active
+{
 	background: rgb(40 52 95 / 28%);
 	backdrop-filter: blur(4px);
+	transition: background 0.5s;
 }
 
-.burger-menu:hover {
-	
-}
-
-
-.burger-menu .lines-burger {
+.burger-menu .lines-burger
+{
 	width: 48px;
 	height: 4px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 16px;
 	transition: 0.5s;
-
-
 }
 
-
-.burger-menu .lines-burger::after {
+.burger-menu .lines-burger::after
+{
 	content: '';
 	position: absolute;
 	width: 48px;
@@ -142,7 +140,8 @@ header
 	transform: translateY(12px);
 }
 
-.burger-menu .lines-burger::before {
+.burger-menu .lines-burger::before
+{
 	content: '';
 	position: absolute;
 	width: 48px;
@@ -151,27 +150,27 @@ header
 	border-radius: 16px;
 	z-index: 200;
 	transform: translateY(-12px);
-	
 }
 
-.burger-menu.cross-burger-menu .lines-burger {
+.burger-menu.cross-burger-menu .lines-burger
+{
 	background-color: rgba(255, 255, 255, 0);
 }
 
-.burger-menu.cross-burger-menu .lines-burger::before {
+.burger-menu.cross-burger-menu .lines-burger::before
+{
 	transform: rotate(45deg);
 	transition: 0.5s;
 }
 
-.burger-menu.cross-burger-menu .lines-burger::after {
+.burger-menu.cross-burger-menu .lines-burger::after
+{
 	transform: rotate(-45deg);
 	transition: 0.5s;
 }
 
-
-
-
-.overlay-menu {
+.overlay-menu
+{
 	position: fixed;
 	display: none;
 	justify-content: center;
@@ -183,16 +182,17 @@ header
 	backdrop-filter: blur(8px);
 	z-index: 100;
 	overflow-y: hidden;
-	
-
-	/* display: none; */
+	/* display: none;
+	*/
 }
 
-.open-overlay-menu {
+.open-overlay-menu
+{
 	display: flex;
 }
 
-.goTop {
+.goTop
+{
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -208,40 +208,36 @@ header
 	cursor: pointer;
 }
 
-nav li {
+nav li
+{
 	position: relative;
 	margin-bottom: 24px;
 	text-align: center;
 	list-style: none;
 }
 
-
-nav li a {
+nav li a
+{
 	color: var(--second-font-color);
 	text-decoration: none;
 	font-family: var(--main-family-font);
 	font-size: 48px;
-	
 }
 
-.underscore-deco {
+.underscore-deco
+{
 	opacity: 0;
 }
 
-nav li a:hover .underscore-deco {
- animation: underscoreAnim 0.6s alternate infinite;
+nav li a:hover .underscore-deco
+{
+	animation: underscoreAnim 0.6s alternate infinite;
 }
-.arrowTop {
+
+.arrowTop
+{
 	transition: all 0.5s;
 }
-
-.goTop:hover .arrowTop {
-	transform: translateY(5px);
-}
-
-
-
-
 
 .container-video
 {
@@ -268,14 +264,14 @@ nav li a:hover .underscore-deco {
 	width: auto;
 }
 
-.scrolldown {
+.scrolldown
+{
 	height: 56px;
 	width: 100%;
 	display: inline-block;
 	margin-top: 48px;
 	text-align: center;
 	z-index: 9;
-
 }
 
 .container-profil
@@ -285,14 +281,15 @@ nav li a:hover .underscore-deco {
 	margin-bottom: 50px;
 	width: 100%;
 	margin-left: 128px;
-	width: auto;	
+	width: auto;
 }
 
 .container-profil .greetings
 {
 	color: var(--main-font-color);
 	font-weight: normal;
-	animation: appearTitleContainerProfil ease-in 0.5s;
+	opacity: 0;
+	animation: appearTitleContainerProfil ease-in 1s forwards;
 }
 
 .container-profil h1
@@ -301,16 +298,16 @@ nav li a:hover .underscore-deco {
 	font-weight: 600;
 	letter-spacing: 4px;
 	margin-bottom: 48px;
-	
+	opacity: 0;
 }
 
-.container-profil .greetings,h1 {
-	animation: appearTitleContainerProfil ease-in 0.5s;
+.container-profil .greetings, .container-profil h1,.container-profil p
+{
+	animation: appearTitleContainerProfil ease-in 0.6s forwards;
 }
 
 .container-profil h3
 {
-	position: relative;
 	margin-bottom: 8px;
 }
 
@@ -319,6 +316,8 @@ nav li a:hover .underscore-deco {
 	color: var(--second-font-color);
 	font-size: 20px;
 	font-weight: 300;
+	opacity: 0;
+	animation-delay: 0.4s;
 }
 
 .container-profil p span
@@ -335,44 +334,31 @@ nav li a:hover .underscore-deco {
 	font-family: var(--main-family-font);
 	border: none;
 	background: #2e60e0;
-	/* box-shadow: 0px 0px 3px #3f3f41; */
 	border-radius: 8px;
 	color: var(--main-font-color);
 	cursor: pointer;
 	transition: all 0.5s;
-	
-	animation: ease-out 1s appearBtnProfil;
+	opacity: 0;
+	animation: ease-out 1s appearBtnProfil forwards;
 	animation-delay: 0.4s;
 }
 
-
-.btn-profil a {
+.btn-profil a
+{
 	color: var(--second-font-color);
 	text-decoration: none;
-
 }
 
-.container-profil button:hover {
+.container-profil button:hover
+{
 	background: #4173f0;
 	transform: translateY(-4px);
-
 }
 
-
-
-.main-container
+/* Partie : section about-me (parcours) */
+#about-me .important-text
 {
-	position: relative;
-}
-
-
-
-#about-me .important-text {
 	font-size: 20px;
-}
-.wave-divider
-{
-	width: 100%;
 }
 
 #about-me p .citation
@@ -384,6 +370,7 @@ nav li a:hover .underscore-deco {
 	font-style: italic;
 }
 
+/* Partie : section why-but-annecy (Pourquoi le but d'Annecy ?) */
 #why-but-annecy
 {
 	position: relative;
@@ -407,9 +394,8 @@ nav li a:hover .underscore-deco {
 
 #why-but-annecy .animation-network
 {
-	min-height: 350px;
+	
 	height: 550px;
-	min-width: 350px;
 	width: 550px;
 	padding-left: 24px;
 	object-fit: contain;
@@ -420,6 +406,7 @@ nav li a:hover .underscore-deco {
 	z-index: 99;
 }
 
+/* Partie : section my-school-knowl et my-it-knowl (Mes connaissances scolaires, mes connaissances en informatique) */
 #my-school-knowl
 {
 	padding-bottom: 0;
@@ -442,7 +429,6 @@ nav li a:hover .underscore-deco {
 
 .container-grid-sk .card
 {
-	width: 368px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -492,6 +478,7 @@ nav li a:hover .underscore-deco {
 	background: linear-gradient(127.66deg, #d9dcf9a9 5.61%, #d9dcf9b0 95.98%);
 }
 
+/* Classes pour JS : voir app.js - l.73 */
 .expandMoreContent
 {
 	height: 0;
@@ -508,6 +495,7 @@ nav li a:hover .underscore-deco {
 	transition: all 0.5s ease-in-out;
 }
 
+/* Partie : section my-projects (Mes projets) */
 #my-projects
 {
 	width: 100%;
@@ -520,14 +508,14 @@ nav li a:hover .underscore-deco {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 428px);
 	gap: 32px;
-    text-align: center;
-    margin-top: 64px;
+	text-align: center;
+	margin-top: 64px;
 }
 
 .container-grid-projects .cards-projects
 {
-    height: fit-content;
-    border-radius: 16px;
+	height: fit-content;
+	border-radius: 16px;
 	background: linear-gradient(162.86deg, #4d8cc4 -1.61%, #1F4FC9 103.17%);
 	margin-bottom: 48px;
 }
@@ -535,9 +523,8 @@ nav li a:hover .underscore-deco {
 .cards-projects .banner-card
 {
 	width: 100%;
-    height: 40%;
-    border-radius: 16px 16px 0 0;
-    
+	height: 40%;
+	border-radius: 16px 16px 0 0;
 }
 
 .container-text-card-project
@@ -562,25 +549,32 @@ nav li a:hover .underscore-deco {
 	text-align: justify;
 }
 
-.cards-projects button {
-    width: 100%;
+.cards-projects button
+{
+	width: 100%;
 	padding: 24px;
 	border: none;
 	border-radius: 0px 0 16px 16px;
 	background: linear-gradient(127.66deg, #D9DCF9 5.61%, #D9DCF9 95.98%);
-	font-size: 16px;
-	font-weight: bold;
-	color: #1F4FC9;
 	cursor: pointer;
 	animation-duration: 0.6s;
-
 }
 
-.cards-projects button:hover {
-    background: linear-gradient(127.66deg, #f6f6ffb4 5.61%, #eff0fdd7 95.98%);
+.cards-projects button:hover
+{
+	background: linear-gradient(127.66deg, #f6f6ffb4 5.61%, #eff0fdd7 95.98%);
 }
 
-.btn-more-projects {
+.cards-projects button a
+{
+	text-decoration: none;
+	color: #1F4FC9;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.btn-more-projects
+{
 	display: inline;
 	font-size: 20px;
 	padding: 24px 108px;
@@ -588,27 +582,25 @@ nav li a:hover .underscore-deco {
 	border-radius: 8px;
 	background-color: rgb(0,0,0,0);
 	color: var(--second-font-color);
-	
-	
 }
 
-footer {
+/* Partie : Footer */
+footer
+{
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	color: var(--second-font-color);
 }
 
-
-
-footer .thanks {
+footer .thanks
+{
 	font-weight: bolder;
 	font-size: 32px;
 }
 
-
-
-.container-text-footer h2 {
+.container-text-footer h2
+{
 	text-transform: uppercase;
 	font-size: 32px;
 	font-weight: 600;
@@ -617,148 +609,281 @@ footer .thanks {
 	color: var(--second-font-color);
 }
 
-.container-text-footer h4 {
+.container-text-footer h4
+{
 	font-size: 24px;
 	color:#2e60e0 ;
 	padding-top: 24px;
 	padding-bottom: 16px;
 	letter-spacing: 2px;
-
 }
 
-.credits {
+.cv a
+{
+	text-decoration: none;
+	color: #1F4FC9;
+	transition: color 0.5s;
+}
+
+.cv a:hover
+{
+	color: #6287e4;
+}
+
+.credits
+{
 	padding-top: 80px;
 	padding-bottom: 4px;
 	color: #c8d3e646;
 }
 
 /* Animation CSS */
-@keyframes appearBtnProfil {
-	0% {
+@keyframes appearBtnProfil
+{
+	0%
+	{
 		transform: translateY(20px);
 		opacity: 0;
 	}
-	100% {
+
+	100%
+	{
 		transform: translateY(0);
 		opacity: 1;
 	}
 }
 
-@keyframes appearTitleContainerProfil {
-	0% {
-		transform: translateX(-48px);
+@keyframes appearTitleContainerProfil
+{
+	0%
+	{
+		transform: translateX(-100px);
 		opacity: 0;
 	}
-	100% {
+
+	100%
+	{
 		transform: translateX(0);
 		opacity: 1;
 	}
 }
 
-
-@keyframes underscoreAnim {
-	0% {
+@keyframes underscoreAnim
+{
+	0%
+	{
 		opacity: 0;
 	}
-	100% {
+
+	100%
+	{
 		opacity: 1;
 	}
 }
 
 /* Responsive : Medias queries */
-
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1600px)
+{
 	/* general */
-	header {
+	header
+	{
 		height: 100%;
 	}
-	.title-section {
+
+	.title-section
+	{
 		font-size: 40px;
 	}
 
-	
-
-	#why-but-annecy {
+	#why-but-annecy
+	{
 		flex-wrap: wrap;
-		
 	}
 
-	#why-but-annecy .animation-network {
+	#why-but-annecy .animation-network
+	{
 		margin: 0 auto;
 		z-index: 99;
 	}
 
-	#why-but-annecy .text-background {
+	#why-but-annecy .text-background
+	{
 		font-size: 120px;
 	}
 }
 
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px)
+{
 	/* general */
-	.waveright {
+	.waveright
+	{
 		display: none;
 	}
-	.container-profil h1, h2 {
+
+	.container-profil h1, h2
+	{
 		font-size: 48px;
 	}
 
-	footer {
+	footer
+	{
 		text-align: center;
 	}
 
-	footer #contact p {
+	footer #contact p
+	{
 		font-size: 24px;
 	}
 }
 
-@media screen and (max-width: 1080px){
-	.burger-menu {
-	left: 48px;
+@media screen and (max-width: 1080px)
+{
+	.burger-menu
+	{
+		left: 24px;
+		top: 24px;
 	}
-	.goTop {
+
+	.goTop
+	{
 		bottom: 12px;
 		right: 12px;
 	}
 
-	section {
+	.arrowTop
+	{
+		width: 24px;
+		height: 24px;
+	}
+
+	section
+	{
 		padding-right: 80px;
 		padding-left: 80px;
 	}
-	.p-section {
-		width: 100%;
+
+	.p-section
+	{
+		/* Bug : width 70% ? */
+		width: 100% !important;
 	}
 
-	.container-profil {
+	.container-profil
+	{
 		text-align: center;
 		margin-left: 0;
 	}
 
-	#why-but-annecy .text-background {
+	#why-but-annecy .text-background
+	{
 		font-size: 80px;
 	}
-	.container-grid-sk {
+
+	#why-but-annecy .animation-network
+	{
+		padding: 0;
+		width: 450px;
+		height: 450px;
+	}
+
+	.container-grid-sk
+	{
 		justify-content: center;
 	}
-	.container-grid-projects {
+
+	.container-grid-projects
+	{
 		justify-content: center;
 	}
 }
 
-@media screen and (max-width: 780px){
-	.container-profil h2,h1 {
+@media screen and (max-width: 540px)
+{
+	section
+	{
+		padding-right: 24px;
+		padding-left: 24px;
+	}
+
+	.title-section
+	{
 		font-size: 32px;
 	}
-	.container-profil p {
-		font-size: 16px;
-	}
-	#why-but-annecy .animation-network {
-	padding: 0;
-	width: 450px;
+
+	nav li a
+	{
+		font-size: 28px;
 	}
 
+	.burger-menu
+	{
+		left: 8px;
+		top: 8px;
+	}
+
+	.burger-menu .lines-burger
+	{
+		height: 3px;
+		width: 32px;
+	}
+
+	.burger-menu .lines-burger::after
+	{
+		height: 3px;
+		width: 32px;
+	}
+
+	.burger-menu .lines-burger::before
+	{
+		height: 3px;
+		width: 32px;
+	}
+
+	.container-profil h1
+	{
+		font-size: 28px;
+	}
+
+	#why-but-annecy .animation-network
+	{
+		width: 350px;
+		height: 350px;
+	}
+
+	#why-but-annecy .text-background
+	{
+		font-size: 55px;
+	}
+
+	footer .thanks
+	{
+		font-size: 24px;
+	}
 }
 
-.animation-network .main {
-	margin: 0 auto;
+@media screen and (max-width: 440px)
+{
+	#why-but-annecy .animation-network
+	{
+		width: 250px;
+		height: 250px;
+	}
+
+	.container-grid-projects, .container-grid-sk
+	{
+		grid-template-columns: repeat(auto-fit, 322px);
+	}
+
+	.cards-projects .title-cards-project
+	{
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 375px)
+{
+	#why-but-annecy .animation-network
+	{
+		display: none;
+	}
 }
