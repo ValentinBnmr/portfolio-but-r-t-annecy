@@ -517,7 +517,7 @@ nav li a:hover .underscore-deco
 	height: fit-content;
 	border-radius: 16px;
 	background: linear-gradient(162.86deg, #4d8cc4 -1.61%, #1F4FC9 103.17%);
-	margin-bottom: 48px;
+	margin-bottom: 56px;
 }
 
 .cards-projects .banner-card
@@ -575,13 +575,27 @@ nav li a:hover .underscore-deco
 
 .btn-more-projects
 {
-	display: inline;
+	display: block;
+	margin: 0 auto;
 	font-size: 20px;
 	padding: 24px 108px;
-	border: solid rgb(43, 43, 223);
+	border: 2px solid #2e60e0;
 	border-radius: 8px;
 	background-color: rgb(0,0,0,0);
+	transition: all 0.5s;
+
+}
+
+.btn-more-projects a {
+	text-decoration: none;
 	color: var(--second-font-color);
+
+}
+
+.btn-more-projects:hover {
+	background-color: #2e60e0;
+	transform: translateY(-4px);
+
 }
 
 /* Partie : Footer */
